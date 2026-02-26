@@ -1,41 +1,82 @@
+# ER Diagram
+
+
+This is my diagram for my competitor app to KAMAR
+
 
 ```plantuml
+
+
 @startuml
 ' config
 hide circle
+skinparam linetype ortho
+
+
+left to right direction
+
 
 entity "Student" {
-    studentId: INTEGER
-    --
-    firstName: TEXT
-    lastName: TEXT
-    dateOfBirth: DATE
-}
+<b>student_id: INTEGER</b>
+--
+first_name: TEXT
+last_name: TEXT
+date_of_birth: DATE
+
+
+  }
+
+
+
 
 entity "StudentClass" {
-    <b>studentId: INTEGER
-    <b>classId: INTERGER
+<b>student_id: INTEGER
+<b>class_id: INTEGER
+--
 }
+
+
+
 
 entity "Class" {
-    <b>classId: INTEGER
-    --
-    className: TEXT
-    room: INTEGER
-    teacherId: INTEGER
-    level: INTEGER
+<b>class_id: INTEGER
+--
+class_name: TEXT
+level: INT
+room_id: INTEGER
+teacher_id: INT
 }
+
+
+
 
 entity "Teacher" {
-   teacherId: INTEGER
-   teacherName: TEXT
+<b>teacher_id: INTEGER
+--
+teacher_name: TEXT
 }
 
-StudentClass }--{ Class
+
+entity "Room" {
+<b>room_id: INTEGER
+--
+building_id: TEXT
+}
+
+
+entity "Building" {
+<b>building_id: INTEGER
+--
+building_name: TEXT
+}
+
+
+
+
 Student ||--{ StudentClass
+Class ||--{ StudentClass
 Class }--|| Teacher
-
-
-
+Class }--|| Room
+Room }--|| Building
 @enduml
 ```
