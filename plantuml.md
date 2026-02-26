@@ -1,3 +1,5 @@
+
+```plantuml
 @startuml
 ' config
 hide circle
@@ -11,12 +13,12 @@ entity "Student" {
 }
 
 entity "StudentClass" {
-    studentId: INTEGER
-    classId: INTERGER
+    <b>studentId: INTEGER
+    <b>classId: INTERGER
 }
 
 entity "Class" {
-    classId: INTEGER
+    <b>classId: INTEGER
     --
     className: TEXT
     room: INTEGER
@@ -36,3 +38,4 @@ Class }--|| Teacher
 
 
 @enduml
+```
