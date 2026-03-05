@@ -26,4 +26,3 @@ SELECT teacher_name, room_id FROM Class
 WHERE room_id = 43 OR room_id = 44;
 
 --8
-SELECT 
